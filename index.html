@@ -22,6 +22,13 @@
           <span>CENTRO EDUCATIVO PANTANITO</span>
         </div>
 
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+        <label for="menu-toggle" class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
         <ul class="menu">
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#nosotros">Nosotros</a></li>
@@ -214,5 +221,22 @@
     <footer class="footer">
       <p>© 2026 Centro Educativo Pantanito. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+      let lastScroll = 0;
+      const header = document.querySelector(".header");
+
+      window.addEventListener("scroll", () => {
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll > lastScroll && currentScroll > 120) {
+          header.classList.add("hide-header");
+        } else {
+          header.classList.remove("hide-header");
+        }
+
+        lastScroll = currentScroll;
+      });
+    </script>
   </body>
 </html>
