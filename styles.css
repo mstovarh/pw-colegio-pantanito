@@ -233,28 +233,85 @@ span {
 @media (max-width: 768px) {
   .navbar {
     height: auto;
-    padding: 20px 0;
+    padding: 18px 0 22px;
     flex-direction: column;
     gap: 18px;
   }
 
-  .menu {
-    flex-wrap: wrap;
+  .logo {
     justify-content: center;
-    gap: 15px;
+    text-align: left;
+  }
+
+  .logo span {
+    font-size: 18px;
+    line-height: 1.2;
+    max-width: 260px;
+  }
+
+  .logo-box {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+  }
+
+  .menu {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .menu li {
+    width: 100%;
+  }
+
+  .menu a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: var(--gris);
+    padding: 12px 10px;
+    border-radius: 999px;
+    font-size: 15px;
+  }
+
+  .menu a:hover {
+    background: var(--naranja);
+    color: var(--blanco);
   }
 
   .hero {
+    min-height: 70vh;
     text-align: center;
-    min-height: 75vh;
+    padding: 70px 0;
+  }
+
+  .hero-content {
+    width: 88%;
+  }
+
+  .tag {
+    font-size: 18px;
+    margin-bottom: 18px;
+  }
+
+  .hero h1 {
+    font-size: 45px;
+    line-height: 1.05;
   }
 
   .hero p {
+    font-size: 19px;
     margin-left: auto;
     margin-right: auto;
   }
 
   .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-vision {
     grid-template-columns: 1fr;
   }
 
@@ -264,7 +321,39 @@ span {
   }
 
   .section h2 {
-    font-size: 32px;
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 430px) {
+  .navbar {
+    width: 92%;
+  }
+
+  .logo span {
+    font-size: 16px;
+  }
+
+  .menu {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .menu a {
+    font-size: 15px;
+    padding: 11px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .hero p {
+    font-size: 17px;
+  }
+
+  .tag {
+    font-size: 16px;
   }
 }
 
