@@ -665,7 +665,7 @@ span {
 }
 
 .arte-carousel-header p {
-  color: #555;
+  color: var(--texto);
   font-size: 15px;
 }
 
@@ -822,4 +822,175 @@ span {
 .version-box[open] summary {
   border-bottom: 1px solid var(--gris);
   margin-bottom: 30px;
+}
+
+/* ==================================================
+   SECCIÓN: ENLACES DE INTERÉS
+================================================== */
+
+.enlaces-section {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: var(--blanco);;
+}
+
+.enlaces-section .arte-carousel-header {
+  margin-bottom: 1.5rem;
+}
+
+.enlaces-section .arte-carousel-header h3 {
+  margin: 0 0 0.5rem;
+  color: var(--indigo);
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.enlaces-section .arte-carousel-header p {
+  margin: 0;
+  color: var(--texto);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Contenedor de las tarjetas */
+
+.enlaces-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.enlaces-list li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Tarjeta de cada enlace */
+
+.enlaces-list li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  min-height: 90px;
+  padding: 1.2rem 1.3rem;
+
+  color: --var(--indigo);
+  background: var(--blanco);
+  border: 1px solid var(--gris);
+  border-left: 5px solid -var(--naranja);
+  border-radius: 14px;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.45;
+
+  text-decoration: none;
+  overflow-wrap: anywhere;
+
+  box-shadow: 0 5px 15px rgba(32, 57, 104, 0.08);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+/* Efecto al pasar el cursor */
+
+.enlaces-list li a:hover {
+  color: --var(--indigo);
+  background: var(--gris);
+  border-color: var(--naranja);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(32, 57, 104, 0.16);
+}
+
+/* Accesibilidad con teclado */
+
+.enlaces-list li a:focus-visible {
+  outline: 3px solid rgba(213, 75, 11, 0.35);
+  outline-offset: 4px;
+}
+
+/* Icono de enlace externo */
+
+.enlace-icon {
+  flex: 0 0 auto;
+
+  width: 36px;
+  height: 36px;
+
+  display: grid;
+  place-items: center;
+
+  color: var(--blanco);
+  background: var(--indigo);
+  border-radius: 50%;
+
+  font-size: 1.1rem;
+  font-weight: 700;
+
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.enlaces-list li a:hover .enlace-icon {
+  background: var(--naranja);
+  transform: translate(2px, -2px);
+}
+
+/* ==================================================
+   DISEÑO RESPONSIVO
+================================================== */
+
+@media (max-width: 768px) {
+  .enlaces-section {
+    margin-top: 2rem;
+    padding: 1.25rem;
+  }
+
+  .enlaces-section .arte-carousel-header h3 {
+    font-size: 1.6rem;
+  }
+
+  .enlaces-list {
+    grid-template-columns: 1fr;
+  }
+
+  .enlaces-list li a {
+    min-height: 78px;
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .enlaces-section {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .enlaces-section .arte-carousel-header h3 {
+    font-size: 1.4rem;
+  }
+
+  .enlaces-list li a {
+    gap: 0.75rem;
+  }
+
+  .enlace-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
 }
