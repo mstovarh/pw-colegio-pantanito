@@ -977,7 +977,6 @@ span {
 @media (max-width: 480px) {
   .enlaces-section {
     padding: 1rem;
-    border-radius: 12px;
   }
 
   .enlaces-section .arte-carousel-header h3 {
