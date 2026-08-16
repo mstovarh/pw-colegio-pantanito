@@ -221,13 +221,144 @@
             </div>
 
             <div class="arte-carousel-section">
-              <div class="arte-carousel-header">
-                <h3>Evidencias de actividades</h3>
-                <p>
-                  Próximamente se agregarán fotografías de los talleres y
-                  encuentros realizados.
-                </p>
+            <div class="arte-carousel-header">
+              <h3>Evidencias de actividades</h3>
+
+              <p>
+                Espacios de socialización en sedes Pantanito, Abetos,
+                Jacinto, La Corocera y Los Mangos.
+              </p>
+            </div>
+
+            <div class="arte-carousel">
+
+              <button
+                class="carousel-btn prev"
+                type="button"
+                aria-label="Imagen anterior"
+              >
+                ‹
+              </button>
+
+              <div class="arte-carousel-track">
+<img
+                      src="img/soc_smangos_1.jpeg"
+                      alt="Talleres Arte al Campo segunda versión"
+                      class="arte-slide"
+                    />
+                    <img
+                      src="img/soc_smangos_2.jpeg"
+                      alt="Talleres Arte al Campo segunda versión"
+                      class="arte-slide"
+                    />
+                    <img
+                      src="img/soc_smangos_3.jpeg"
+                      alt="Talleres Arte al Campo segunda versión"
+                      class="arte-slide"
+                    />
+                    <img
+                      src="img/soc_smangos_4.jpeg"
+                      alt="Talleres Arte al Campo segunda versión"
+                      class="arte-slide"
+                    />
+                    <img
+                      src="img/soc_smangos_5.jpeg"
+                      alt="Talleres Arte al Campo segunda versión"
+                      class="arte-slide"
+                    />
+                    <img
+                      src="img/soc_smangos_6.jpeg"
+                      alt="Talleres Arte al Campo segunda versión"
+                      class="arte-slide"
+                    />
+                    <img
+                      src="img/soc_smangos_7.jpeg"
+                      alt="Talleres Arte al Campo segunda versión"
+                      class="arte-slide"
+                    />
+                    <img
+                      src="img/soc_smangos_8.jpeg"
+                      alt="Talleres Arte al Campo segunda versión"
+                      class="arte-slide"
+                    />
+                    <img
+                      src="img/soc_spantanito_1.jpeg"
+                      alt="Afiche principal Arte al Campo segunda versión"
+                      class="arte-slide"
+                    />
+                    <img
+                      src="img/soc_spantanito_2.jpeg"
+                      alt="Objetivo y descripción Arte al Campo segunda versión"
+                      class="arte-slide"
+                    />
+                    <img
+                      src="img/soc_spantanito_3.jpeg"
+                      alt="Talleres Arte al Campo segunda versión"
+                      class="arte-slide"
+                    />
+                    <img
+                      src="img/soc_sabetos_1.jpeg"
+                      alt="Afiche principal Arte al Campo segunda versión"
+                      class="arte-slide"
+                    />
+                    <img
+                      src="img/soc_sjacinto_1.jpeg"
+                      alt="Objetivo y descripción Arte al Campo segunda versión"
+                      class="arte-slide"
+                    />
+                    <img
+                      src="img/soc_sjacinto_2.jpeg"
+                      alt="Talleres Arte al Campo segunda versión"
+                      class="arte-slide"
+                    />
+                    <img
+                      src="img/soc_sjacinto_3.jpeg"
+                      alt="Talleres Arte al Campo segunda versión"
+                      class="arte-slide"
+                    />
+                    <img
+                      src="img/soc_scorocera_1.jpeg"
+                      alt="Talleres Arte al Campo segunda versión"
+                      class="arte-slide"
+                    />
+                    <img
+                      src="img/soc_scorocera_2.jpeg"
+                      alt="Talleres Arte al Campo segunda versión"
+                      class="arte-slide"
+                    />
+                    <img
+                      src="img/soc_scorocera_3.jpeg"
+                      alt="Talleres Arte al Campo segunda versión"
+                      class="arte-slide"
+                    />
+                    <video class="arte-slide arte-video" controls>
+                      <source src="img/soc_sjacinto_v_1.mp4" type="video/mp4" />
+                      Tu navegador no soporta la reproducción de video.
+                    </video>
+                    <video class="arte-slide arte-video" controls>
+                      <source src="img/soc_spantanito_v_1.mp4" type="video/mp4" />
+                      Tu navegador no soporta la reproducción de video.
+                    </video>
+                    <video class="arte-slide arte-video" controls>
+                      <source src="img/soc_sabetos_v_1.mp4" type="video/mp4" />
+                      Tu navegador no soporta la reproducción de video.
+                    </video>
+                    <video class="arte-slide arte-video" controls>
+                      <source src="img/soc_scorocera_v_1.mp4" type="video/mp4" />
+                      Tu navegador no soporta la reproducción de video.
+                    </video>
               </div>
+
+              <button
+                class="carousel-btn next"
+                type="button"
+                aria-label="Imagen siguiente"
+              >
+                ›
+              </button>
+
+            </div>
+          </div>
 
               <div class="evidencias-grid">
                 <article class="evidencia-card">
@@ -333,8 +464,13 @@
       <p>© 2026 Centro Educativo Pantanito. Todos los derechos reservados.</p>
     </footer>
 
-    <script>
+        <script>
       document.addEventListener("DOMContentLoaded", () => {
+
+        /* =====================================================
+          HEADER: OCULTAR AL BAJAR / MOSTRAR AL SUBIR
+        ===================================================== */
+
         let lastScroll = 0;
         const header = document.querySelector(".header");
 
@@ -350,46 +486,126 @@
           lastScroll = currentScroll;
         });
 
-        const track = document.querySelector(".arte-carousel-track");
-        const prevBtn = document.querySelector(".carousel-btn.prev");
-        const nextBtn = document.querySelector(".carousel-btn.next");
+
+        /* =====================================================
+          CARRUSELES
+          Funciona con todos los carruseles de la página
+        ===================================================== */
+
+        const carousels = document.querySelectorAll(".arte-carousel");
+
+        carousels.forEach((carousel) => {
+
+          const track = carousel.querySelector(".arte-carousel-track");
+          const prevBtn = carousel.querySelector(".carousel-btn.prev");
+          const nextBtn = carousel.querySelector(".carousel-btn.next");
+
+          if (!track) return;
+
+          if (prevBtn) {
+            prevBtn.addEventListener("click", () => {
+              const scrollAmount = Math.min(
+                350,
+                track.clientWidth * 0.8
+              );
+
+              track.scrollBy({
+                left: -scrollAmount,
+                behavior: "smooth"
+              });
+            });
+          }
+
+          if (nextBtn) {
+            nextBtn.addEventListener("click", () => {
+              const scrollAmount = Math.min(
+                350,
+                track.clientWidth * 0.8
+              );
+
+              track.scrollBy({
+                left: scrollAmount,
+                behavior: "smooth"
+              });
+            });
+          }
+
+        });
+
+
+        /* =====================================================
+          MODAL PARA AMPLIAR IMÁGENES
+        ===================================================== */
+
         const slides = document.querySelectorAll(".arte-slide");
+
         const modal = document.getElementById("imageModal");
         const modalImage = document.getElementById("modalImage");
         const closeModal = document.querySelector(".modal-close");
 
-        if (track && prevBtn && nextBtn) {
-          prevBtn.addEventListener("click", () => {
-            track.scrollBy({ left: -320, behavior: "smooth" });
-          });
-
-          nextBtn.addEventListener("click", () => {
-            track.scrollBy({ left: 320, behavior: "smooth" });
-          });
-        }
-
         if (modal && modalImage && closeModal) {
+
           slides.forEach((slide) => {
+
             slide.addEventListener("click", () => {
-              modalImage.src = slide.getAttribute("src");
-              modalImage.alt = slide.getAttribute("alt");
+
+              modalImage.src = slide.src;
+              modalImage.alt = slide.alt;
+
               modal.classList.add("active");
+
               document.body.style.overflow = "hidden";
+
             });
+
           });
+
+
+          /* Cerrar con la X */
 
           closeModal.addEventListener("click", () => {
+
             modal.classList.remove("active");
+
             document.body.style.overflow = "";
+
           });
 
+
+          /* Cerrar haciendo clic fuera de la imagen */
+
           modal.addEventListener("click", (event) => {
+
             if (event.target === modal) {
+
               modal.classList.remove("active");
+
               document.body.style.overflow = "";
+
             }
+
           });
+
+
+          /* Cerrar con ESC */
+
+          document.addEventListener("keydown", (event) => {
+
+            if (
+              event.key === "Escape" &&
+              modal.classList.contains("active")
+            ) {
+
+              modal.classList.remove("active");
+
+              document.body.style.overflow = "";
+
+            }
+
+          });
+
         }
+
       });
     </script>
   </body>

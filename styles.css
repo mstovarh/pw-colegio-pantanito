@@ -842,8 +842,7 @@ span {
   margin: 0 0 0.5rem;
   color: var(--indigo);
   font-family: "Montserrat", sans-serif;
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 24px;
 }
 
 .enlaces-section .arte-carousel-header p {
@@ -992,4 +991,13 @@ span {
     height: 32px;
     font-size: 1rem;
   }
+}
+
+.arte-video {
+  width: 290px;
+  min-width: 290px;
+  height: 365px;
+  object-fit: cover;
+  border-radius: 22px;
+  background: #000;
 }
