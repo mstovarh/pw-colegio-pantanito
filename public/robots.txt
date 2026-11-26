@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pw-colegio-pantanito.marestohe.workers.dev/sitemap.xml
